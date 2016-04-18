@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 1</title>
+	<meta charset="utf-8">
+	
+	<script type="text/javascript">
+	function setDetail(){
+		
+		
+		if(document.getElementById('txt3').value==document.getElementById('txt4').value){
+			localStorage.setItem('name',document.getElementById('txt1').value);
+			localStorage.setItem('email',document.getElementById('txt2').value);
+			localStorage.setItem('pswd',document.getElementById('txt3').value);
+		}
+		else{
+			alert("password you enter did not match!!");
+		}
+	}
+	function getDetail(){
+		
+		var tname=document.getElementById('txt5').value;
+		var local_name= localStorage.getItem('name');
+		var tpsw=document.getElementById('txt6').value;
+		var local_psw= localStorage.getItem('pswd');
+		if(tname!=local_name || tpsw!=local_psw){
+			alert("Invalid User! Please Register! ");
+			
+		}
+		else{
+			alert("Welcome " + tname+" to Assignment1!");
+		}
+	}
+
+	/*if (localStorage.chkbx && localStorage.chkbx != '') {
+                    document.getElementById("chk1").attr('checked', 'checked');
+                    document.getElementById('txt5').val(localStorage.name);
+                    document.getElementById('txt6').val(localStorage.pswd);
+                } 
+                else {
+                    document.getElementById('chk1').removeAttr('checked');
+                    document.getElementById('txt5').val('');
+                    document.getElementById('txt6').val('');
+                }
+ 
+                document.getElementById('chk1').click(function() {
+ 
+                    if (document.getElementById('chk1').is(':checked')) {
+                        // save username and password
+                        localStorage.name = document.getElementById('txt5').val();
+                        localStorage.pswd =document.getElementById('txt6').val();
+                        localStorage.chkbx = document.getElementById('chk1').val();
+                    } else {
+                        localStorage.name = '';
+                        localStorage.pswd = '';
+                        localStorage.chkbx = '';
+                    }
+                }*/
+
+	</script>
+	<style type="text/css">
+#wrapper{
+	width:80%; 
+	margin:auto;
+	font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+
+	
+
+}
+#main{
+	float:left;
+	width:100%;
+	background-color: #EEEEEE;
+	padding: 30px;
+}
+#art1{
+	display:block;
+	float:left;
+	padding: 10px;
+	padding-left: 20px;
+
+}
+#art2{
+	display:block;
+	float:right;
+	padding: 10px;
+	padding-right: 50px;
+	padding-left: 30px;
+	background-color:#202F51; 
+	color: white;
+	
+}
+#btn1{
+	width: 125px; 
+	float: right; 
+	height: 30px; 
+	border: medium solid; 
+	color:#202F51;
+	font-weight: bold;
+}
+#btn2{
+	width: 125px; 
+	float: right; 
+	height: 30px; 
+	border: #EA9C09 medium solid ; 
+	background-color:#202F51; 
+	color:white;
+	font-weight: bold;
+}
+input[id^="txt"]{
+	width: 300px;
+	height: 30px;
+}
+
+a#a1{
+	text-decoration: none;
+	font-weight: bold;
+	color:#202F51; 
+}
+a#a2{
+	text-decoration: none;
+	font-weight: bold;
+	color:white; 
+}
+
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+	<div id="main">
+	
+		<h2 style="color:#202F51;">Enter the System</h2>
+		<p style="font-weight:bold;color:#8F8685;">It is necessary to login in Your Account in order to sign up for a course</p>
+		<br>
+	
+		<article id="art1">
+			<form name="form1" method="post" action="" onsubmit="setDetail()">
+				<p>
+				<label style="font-weight:bold;color:#8F8685" >ARE YOU NEW?</label>
+				<a id="a1" href="#">REGISTER!</a>
+				</p>
+				<p>
+					<input required id="txt1"type="text" placeholder="User Name">
+				</p>
+				<p>
+					<input required id="txt2"type="email" placeholder="Email">
+				</p>
+				<p>
+					<input required id="txt3"type="password" placeholder="Password">
+				</p>
+				<p>
+					<input required id="txt4"type="password" placeholder="Confirm Password" >
+				</p>
+				<p>
+					<input required  type="submit" id="btn1" name="submit" value="Register">
+				</p>
+				
+			</form>
+		</article>
+
+ 		<article id="art2">
+ 			<form name="form2" method="post" action="Welcome.html" onsubmit="getDetail()">
+				<p>
+					<label style="font-weight:bold">ALREADY A STUDENT?</label>
+					<a id="a2" href="#">LOGIN</a>
+				</p>
+				<p>
+					<input  required id="txt5" type="text" placeholder="User Name">
+				</p>
+				<p>
+					<input  required id="txt6" type="password" placeholder="Password">
+				</p>
+				<p>
+					<input id="chk1" type="checkbox" name="remember">Remember me?
+					<input required  type="submit" id="btn2" name="submit" value="Login">
+				</p>
+				<p>
+					<a href="#" style="color:white;float:right">Forget Password!</a>
+				</p>
+				
+
+			</form>
+		</article>
+
+
+
+
+</div>
+</div>
+
+</body>
+</html>
